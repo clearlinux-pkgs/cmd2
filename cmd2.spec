@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 0.6.8
-Release  : 10
+Release  : 11
 URL      : https://pypi.python.org/packages/source/c/cmd2/cmd2-0.6.8.tar.gz
 Source0  : https://pypi.python.org/packages/source/c/cmd2/cmd2-0.6.8.tar.gz
 Summary  : Extra features for standard library's cmd module
