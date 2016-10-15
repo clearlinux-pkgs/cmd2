@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 0.6.8
-Release  : 14
+Release  : 15
 URL      : https://pypi.python.org/packages/source/c/cmd2/cmd2-0.6.8.tar.gz
 Source0  : https://pypi.python.org/packages/source/c/cmd2/cmd2-0.6.8.tar.gz
 Summary  : Extra features for standard library's cmd module
@@ -13,6 +13,7 @@ License  : MIT
 Requires: cmd2-python
 BuildRequires : pbr
 BuildRequires : pip
+BuildRequires : pyparsing 
 BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
@@ -36,13 +37,14 @@ python components for the cmd2 package.
 %setup -q -n cmd2-0.6.8
 
 %build
+export LANG=C
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
 rm -rf %{buildroot}
-python2 setup.py build -b py2 install --root=%{buildroot}
-python3 setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot}
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 
 %files
 %defattr(-,root,root,-)

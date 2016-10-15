@@ -1,4 +1,5 @@
 PKG_NAME := cmd2
-URL := https://pypi.python.org/packages/source/c/cmd2/cmd2-0.6.8.tar.gz
+URL := http://pypi.debian.net/cmd2/cmd2-0.6.8.tar.gz
+ARCHIVES :=
 
 include ../common/Makefile.common
