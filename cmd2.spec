@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 0.6.9
-Release  : 16
+Release  : 17
 URL      : http://pypi.debian.net/cmd2/cmd2-0.6.9.tar.gz
 Source0  : http://pypi.debian.net/cmd2/cmd2-0.6.9.tar.gz
 Summary  : Extra features for standard library's cmd module
