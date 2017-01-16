@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 0.6.9
-Release  : 19
+Release  : 20
 URL      : http://pypi.debian.net/cmd2/cmd2-0.6.9.tar.gz
 Source0  : http://pypi.debian.net/cmd2/cmd2-0.6.9.tar.gz
 Summary  : Extra features for standard library's cmd module
@@ -15,7 +15,7 @@ BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : pluggy
 BuildRequires : py-python
-BuildRequires : pyparsing 
+BuildRequires : pyparsing
 BuildRequires : pytest
 BuildRequires : python-dev
 BuildRequires : python3-dev
@@ -44,13 +44,15 @@ python components for the cmd2 package.
 
 %build
 export LANG=C
+export SOURCE_DATE_EPOCH=1484539302
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
+export SOURCE_DATE_EPOCH=1484539302
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot}
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files
 %defattr(-,root,root,-)
