@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 0.7.6
-Release  : 29
+Release  : 30
 URL      : http://pypi.debian.net/cmd2/cmd2-0.7.6.tar.gz
 Source0  : http://pypi.debian.net/cmd2/cmd2-0.7.6.tar.gz
 Summary  : cmd2 - a tool for building interactive command line applications in Python
@@ -60,7 +60,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532209309
+export SOURCE_DATE_EPOCH=1532217252
 python3 setup.py build -b py3
 
 %install
