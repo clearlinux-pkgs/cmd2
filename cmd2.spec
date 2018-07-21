@@ -4,18 +4,20 @@
 #
 Name     : cmd2
 Version  : 0.7.6
-Release  : 28
+Release  : 29
 URL      : http://pypi.debian.net/cmd2/cmd2-0.7.6.tar.gz
 Source0  : http://pypi.debian.net/cmd2/cmd2-0.7.6.tar.gz
 Summary  : cmd2 - a tool for building interactive command line applications in Python
 Group    : Development/Tools
 License  : MIT
+Requires: cmd2-python3
+Requires: cmd2-license
 Requires: cmd2-python
 Requires: pyparsing
 Requires: six
+BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
@@ -24,12 +26,30 @@ it quick and easy for developers to build feature-rich and user-friendly interac
         provides a simple API which is an extension of Python's built-in cmd module.  cmd2 provides a wealth of features on top 
         of cmd to make your life easier and eliminates much of the boilerplate code which would be necessary when using cmd.
 
+%package license
+Summary: license components for the cmd2 package.
+Group: Default
+
+%description license
+license components for the cmd2 package.
+
+
 %package python
 Summary: python components for the cmd2 package.
 Group: Default
+Requires: cmd2-python3
 
 %description python
 python components for the cmd2 package.
+
+
+%package python3
+Summary: python3 components for the cmd2 package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the cmd2 package.
 
 
 %prep
@@ -40,15 +60,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503006653
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1532209309
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1503006653
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+mkdir -p %{buildroot}/usr/share/doc/cmd2
+cp LICENSE %{buildroot}/usr/share/doc/cmd2/LICENSE
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -56,7 +75,13 @@ echo ----[ mark ]----
 %files
 %defattr(-,root,root,-)
 
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/cmd2/LICENSE
+
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python2*/*
+
+%files python3
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
