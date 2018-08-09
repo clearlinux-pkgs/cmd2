@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 0.9.3
-Release  : 31
+Release  : 32
 URL      : https://files.pythonhosted.org/packages/3a/90/0f55984795242d29ddd010ca597880b1b19f65973c8c533f6012a91fc1a5/cmd2-0.9.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/3a/90/0f55984795242d29ddd010ca597880b1b19f65973c8c533f6012a91fc1a5/cmd2-0.9.3.tar.gz
 Summary  : cmd2 - a tool for building interactive command line applications in Python
@@ -23,13 +23,9 @@ Requires: tox
 Requires: typing
 Requires: wcwidth
 BuildRequires : buildreq-distutils3
-BuildRequires : pbr
-BuildRequires : pip
 BuildRequires : pluggy
 BuildRequires : py-python
 BuildRequires : pytest
-BuildRequires : python3-dev
-BuildRequires : setuptools
 BuildRequires : tox
 BuildRequires : virtualenv
 
@@ -72,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532242543
+export SOURCE_DATE_EPOCH=1533785507
 python3 setup.py build -b py3
 
 %install
