@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 0.9.3
-Release  : 32
+Release  : 33
 URL      : https://files.pythonhosted.org/packages/3a/90/0f55984795242d29ddd010ca597880b1b19f65973c8c533f6012a91fc1a5/cmd2-0.9.3.tar.gz
 Source0  : https://files.pythonhosted.org/packages/3a/90/0f55984795242d29ddd010ca597880b1b19f65973c8c533f6012a91fc1a5/cmd2-0.9.3.tar.gz
 Summary  : cmd2 - a tool for building interactive command line applications in Python
@@ -17,6 +17,7 @@ Requires: Sphinx
 Requires: colorama
 Requires: contextlib2
 Requires: pylint
+Requires: pyperclip
 Requires: pytest
 Requires: pytest-cov
 Requires: tox
@@ -68,7 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1533785507
+export SOURCE_DATE_EPOCH=1533789193
 python3 setup.py build -b py3
 
 %install
