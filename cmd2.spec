@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 0.9.4
-Release  : 34
+Release  : 35
 URL      : https://files.pythonhosted.org/packages/85/e8/e413541e77b400477204aa9c858b3604abf88f820cf2c30b2d9454449041/cmd2-0.9.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/85/e8/e413541e77b400477204aa9c858b3604abf88f820cf2c30b2d9454449041/cmd2-0.9.4.tar.gz
 Summary  : cmd2 - a tool for building interactive command line applications in Python
@@ -72,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1534861612
+export SOURCE_DATE_EPOCH=1534861974
 python3 setup.py build -b py3
 
 %install
