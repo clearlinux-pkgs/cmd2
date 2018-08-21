@@ -1,5 +1,5 @@
 PKG_NAME := cmd2
-URL = https://files.pythonhosted.org/packages/3a/90/0f55984795242d29ddd010ca597880b1b19f65973c8c533f6012a91fc1a5/cmd2-0.9.3.tar.gz
+URL = https://files.pythonhosted.org/packages/85/e8/e413541e77b400477204aa9c858b3604abf88f820cf2c30b2d9454449041/cmd2-0.9.4.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
