@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 0.9.4
-Release  : 35
+Release  : 36
 URL      : https://files.pythonhosted.org/packages/85/e8/e413541e77b400477204aa9c858b3604abf88f820cf2c30b2d9454449041/cmd2-0.9.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/85/e8/e413541e77b400477204aa9c858b3604abf88f820cf2c30b2d9454449041/cmd2-0.9.4.tar.gz
 Summary  : cmd2 - a tool for building interactive command line applications in Python
@@ -13,16 +13,11 @@ License  : MIT
 Requires: cmd2-python3
 Requires: cmd2-license
 Requires: cmd2-python
-Requires: Sphinx
 Requires: attrs
 Requires: colorama
 Requires: contextlib2
-Requires: pylint
 Requires: pyperclip
-Requires: pytest
-Requires: pytest-cov
-Requires: python-mock
-Requires: tox
+Requires: pyreadline
 Requires: typing
 Requires: wcwidth
 BuildRequires : buildreq-distutils3
@@ -49,7 +44,7 @@ license components for the cmd2 package.
 %package python
 Summary: python components for the cmd2 package.
 Group: Default
-Requires: cmd2-python3
+Requires: cmd2-python3 = %{version}-%{release}
 
 %description python
 python components for the cmd2 package.
@@ -72,14 +67,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1534861974
-python3 setup.py build -b py3
+export SOURCE_DATE_EPOCH=1538840037
+python3 setup.py build
 
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/cmd2
 cp LICENSE %{buildroot}/usr/share/doc/cmd2/LICENSE
-python3 -tt setup.py build -b py3 install --root=%{buildroot}
+python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -88,7 +83,7 @@ echo ----[ mark ]----
 %defattr(-,root,root,-)
 
 %files license
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/doc/cmd2/LICENSE
 
 %files python
