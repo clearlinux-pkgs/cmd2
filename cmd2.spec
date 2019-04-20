@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 0.9.11
-Release  : 46
+Release  : 47
 URL      : https://files.pythonhosted.org/packages/e6/83/555bf188026779e74e0f8929ab039327bbaac3161f2d61804947473d03d0/cmd2-0.9.11.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e6/83/555bf188026779e74e0f8929ab039327bbaac3161f2d61804947473d03d0/cmd2-0.9.11.tar.gz
 Summary  : cmd2 - a tool for building interactive command line applications in Python
