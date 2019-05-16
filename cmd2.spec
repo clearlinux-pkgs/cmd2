@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 0.9.12
-Release  : 48
+Release  : 49
 URL      : https://files.pythonhosted.org/packages/ef/02/3d8693f779de1f573a4f28c8efbec3356a78c6bf4dd057fb150b7f71e8b1/cmd2-0.9.12.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ef/02/3d8693f779de1f573a4f28c8efbec3356a78c6bf4dd057fb150b7f71e8b1/cmd2-0.9.12.tar.gz
 Summary  : cmd2 - quickly build feature-rich and user-friendly interactive command line applications in Python
@@ -20,13 +20,22 @@ Requires: pyperclip
 Requires: pyreadline
 Requires: typing
 Requires: wcwidth
+Requires: which
+BuildRequires : attrs
 BuildRequires : buildreq-distutils3
+BuildRequires : colorama
+BuildRequires : contextlib2
 BuildRequires : pluggy
 BuildRequires : py-python
+BuildRequires : pyperclip
+BuildRequires : pyreadline
 BuildRequires : pytest
 BuildRequires : setuptools_scm
 BuildRequires : tox
+BuildRequires : typing
 BuildRequires : virtualenv
+BuildRequires : wcwidth
+BuildRequires : which
 
 %description
 cmd2: a tool for building interactive command line apps
@@ -72,7 +81,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1556288906
+export SOURCE_DATE_EPOCH=1558029499
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
