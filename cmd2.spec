@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 0.9.14
-Release  : 51
+Release  : 52
 URL      : https://files.pythonhosted.org/packages/cb/ce/718d8b6c0992d86f31f3b43843dde9e7d49f67c6d98eff2b9ff5be6d7b7b/cmd2-0.9.14.tar.gz
 Source0  : https://files.pythonhosted.org/packages/cb/ce/718d8b6c0992d86f31f3b43843dde9e7d49f67c6d98eff2b9ff5be6d7b7b/cmd2-0.9.14.tar.gz
 Summary  : cmd2 - quickly build feature-rich and user-friendly interactive command line applications in Python
