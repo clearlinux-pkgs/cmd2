@@ -4,10 +4,10 @@
 #
 Name     : cmd2
 Version  : 0.9.22
-Release  : 61
+Release  : 62
 URL      : https://files.pythonhosted.org/packages/19/a0/4a4c6a0ba3fd3f598ba6a591721c4910c28a617b8bc3935fceff4b335e28/cmd2-0.9.22.tar.gz
 Source0  : https://files.pythonhosted.org/packages/19/a0/4a4c6a0ba3fd3f598ba6a591721c4910c28a617b8bc3935fceff4b335e28/cmd2-0.9.22.tar.gz
-Summary  : cmd2 - quickly build feature-rich and user-friendly interactive command line applications in Python
+Summary  : A tool for building interactive command line apps
 Group    : Development/Tools
 License  : MIT
 Requires: cmd2-license = %{version}-%{release}
@@ -16,7 +16,6 @@ Requires: cmd2-python3 = %{version}-%{release}
 Requires: attrs
 Requires: colorama
 Requires: pyperclip
-Requires: pyreadline
 Requires: wcwidth
 Requires: which
 BuildRequires : attrs
@@ -25,7 +24,6 @@ BuildRequires : colorama
 BuildRequires : pluggy
 BuildRequires : py-python
 BuildRequires : pyperclip
-BuildRequires : pyreadline
 BuildRequires : pytest
 BuildRequires : setuptools_scm
 BuildRequires : tox
@@ -34,15 +32,12 @@ BuildRequires : wcwidth
 BuildRequires : which
 
 %description
-cmd2: a tool for building interactive command line apps
-=======================================================
-[![Latest Version](https://img.shields.io/pypi/v/cmd2.svg?style=flat-square&label=latest%20stable%20version)](https://pypi.python.org/pypi/cmd2/)
-[![Build status](https://img.shields.io/travis/python-cmd2/cmd2.svg?style=flat-square&label=unix%20build)](https://travis-ci.org/python-cmd2/cmd2)
-[![Appveyor build status](https://img.shields.io/appveyor/ci/FedericoCeratto/cmd2.svg?style=flat-square&label=windows%20build)](https://ci.appveyor.com/project/FedericoCeratto/cmd2)
-[![Azure Build status](https://python-cmd2.visualstudio.com/cmd2/_apis/build/status/python-cmd2.cmd2?branch=master)](https://python-cmd2.visualstudio.com/cmd2/_build/latest?definitionId=1&branch=master)
-[![codecov](https://codecov.io/gh/python-cmd2/cmd2/branch/master/graph/badge.svg)](https://codecov.io/gh/python-cmd2/cmd2)
-[![Documentation Status](https://readthedocs.org/projects/cmd2/badge/?version=latest)](http://cmd2.readthedocs.io/en/latest/?badge=latest)
-<a href="https://discord.gg/RpVG6tk"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg" alt="Chat"></a>
+cmd2 is a tool for building interactive command line applications in Python.
+Its goal is to make it quick and easy for developers to build feature-rich and
+user-friendly interactive command line applications. It provides a simple API
+which is an extension of Python's built-in cmd module. cmd2 provides a wealth
+of features on top of cmd to make your life easier and eliminates much of the
+boilerplate code which would be necessary when using cmd.
 
 %package license
 Summary: license components for the cmd2 package.
@@ -79,8 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1575994846
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1576202670
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
