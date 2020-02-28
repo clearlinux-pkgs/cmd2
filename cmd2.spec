@@ -4,12 +4,13 @@
 #
 Name     : cmd2
 Version  : 0.10.1
-Release  : 68
+Release  : 69
 URL      : https://files.pythonhosted.org/packages/d9/de/27517d991bb287e54ad7ea5b20c25ea414c7e08bcd503cc8be959b65a365/cmd2-0.10.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/d9/de/27517d991bb287e54ad7ea5b20c25ea414c7e08bcd503cc8be959b65a365/cmd2-0.10.1.tar.gz
 Summary  : A tool for building interactive command line apps
 Group    : Development/Tools
 License  : MIT
+Requires: cmd2-license = %{version}-%{release}
 Requires: cmd2-python = %{version}-%{release}
 Requires: cmd2-python3 = %{version}-%{release}
 Requires: attrs
@@ -40,6 +41,14 @@ which is an extension of Python's built-in cmd module. cmd2 provides a wealth
 of features on top of cmd to make your life easier and eliminates much of the
 boilerplate code which would be necessary when using cmd.
 
+%package license
+Summary: license components for the cmd2 package.
+Group: Default
+
+%description license
+license components for the cmd2 package.
+
+
 %package python
 Summary: python components for the cmd2 package.
 Group: Default
@@ -53,6 +62,7 @@ python components for the cmd2 package.
 Summary: python3 components for the cmd2 package.
 Group: Default
 Requires: python3-core
+Provides: pypi(cmd2)
 
 %description python3
 python3 components for the cmd2 package.
@@ -67,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582142027
+export SOURCE_DATE_EPOCH=1582908347
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -83,6 +93,8 @@ python3 setup.py build
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/cmd2
+cp %{_builddir}/cmd2-0.10.1/LICENSE %{buildroot}/usr/share/package-licenses/cmd2/034107bef270506011745fc01e2c80493ef9421f
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -90,6 +102,10 @@ echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/cmd2/034107bef270506011745fc01e2c80493ef9421f
 
 %files python
 %defattr(-,root,root,-)
