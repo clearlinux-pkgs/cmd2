@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 1.3.10
-Release  : 82
+Release  : 83
 URL      : https://files.pythonhosted.org/packages/3e/20/6b839b085e98f1a0708d3f5e269c0ebc44751f1747ad8d54a2a65d863d51/cmd2-1.3.10.tar.gz
 Source0  : https://files.pythonhosted.org/packages/3e/20/6b839b085e98f1a0708d3f5e269c0ebc44751f1747ad8d54a2a65d863d51/cmd2-1.3.10.tar.gz
 Summary  : A tool for building interactive command line apps
