@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 1.4.0
-Release  : 86
+Release  : 87
 URL      : https://files.pythonhosted.org/packages/c1/76/98f8767ddc8febfbd6367b2fcd391cd92087496d00e58ad99008e126035e/cmd2-1.4.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c1/76/98f8767ddc8febfbd6367b2fcd391cd92087496d00e58ad99008e126035e/cmd2-1.4.0.tar.gz
 Summary  : A tool for building interactive command line apps
