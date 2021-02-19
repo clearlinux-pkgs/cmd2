@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 1.5.0
-Release  : 89
+Release  : 90
 URL      : https://files.pythonhosted.org/packages/00/65/f580d23070a3f4eadaece9e4edcea002bc7fed639debc63c7b81a42fbe7f/cmd2-1.5.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/00/65/f580d23070a3f4eadaece9e4edcea002bc7fed639debc63c7b81a42fbe7f/cmd2-1.5.0.tar.gz
 Summary  : A tool for building interactive command line apps
