@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 2.3.0
-Release  : 105
+Release  : 106
 URL      : https://files.pythonhosted.org/packages/87/06/2cf7c7f48e3aa22cecb072bb503dc8d46177420b163275b2903e872b52e7/cmd2-2.3.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/87/06/2cf7c7f48e3aa22cecb072bb503dc8d46177420b163275b2903e872b52e7/cmd2-2.3.0.tar.gz
 Summary  : A tool for building interactive command line apps
@@ -13,20 +13,15 @@ License  : MIT
 Requires: cmd2-license = %{version}-%{release}
 Requires: cmd2-python = %{version}-%{release}
 Requires: cmd2-python3 = %{version}-%{release}
-Requires: attrs
-Requires: importlib_metadata
-Requires: pyperclip
-Requires: typing_extensions
-Requires: wcwidth
 Requires: which
-BuildRequires : attrs
 BuildRequires : buildreq-distutils3
-BuildRequires : pyperclip
-BuildRequires : setuptools
+BuildRequires : pypi(attrs)
+BuildRequires : pypi(pyperclip)
+BuildRequires : pypi(setuptools)
+BuildRequires : pypi(setuptools_scm)
+BuildRequires : pypi(wcwidth)
+BuildRequires : pypi(wheel)
 BuildRequires : setuptools_scm
-BuildRequires : wcwidth
-BuildRequires : wheel
-BuildRequires : which
 
 %description
 cmd2 is a tool for building interactive command line applications in Python.
@@ -75,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1636676885
+export SOURCE_DATE_EPOCH=1637364631
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -85,7 +80,7 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
-python3 setup.py build
+python3 -m build --wheel --skip-dependency-check --no-isolation
 
 %install
 export MAKEFLAGS=%{?_smp_mflags}
@@ -93,7 +88,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cmd2
 cp %{_builddir}/cmd2-2.3.0/LICENSE %{buildroot}/usr/share/package-licenses/cmd2/dd9e5c31bd71aedce57d00c1dd7a4a2737a97521
 cp %{_builddir}/cmd2-2.3.0/plugins/template/LICENSE %{buildroot}/usr/share/package-licenses/cmd2/3e6eb52ad8a3906e168e16d4a635f441ff29e02b
-python3 -tt setup.py build  install --root=%{buildroot}
+python3 -m install --destdir=%{buildroot} dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
