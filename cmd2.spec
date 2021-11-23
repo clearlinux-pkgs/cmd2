@@ -4,7 +4,7 @@
 #
 Name     : cmd2
 Version  : 2.3.2
-Release  : 108
+Release  : 109
 URL      : https://files.pythonhosted.org/packages/a2/34/8f0782137410fbf14b015ab32de4870d0f83c15703023e1851e5894166e6/cmd2-2.3.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a2/34/8f0782137410fbf14b015ab32de4870d0f83c15703023e1851e5894166e6/cmd2-2.3.2.tar.gz
 Summary  : A tool for building interactive command line apps
@@ -70,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1637622106
+export SOURCE_DATE_EPOCH=1637686293
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -88,7 +88,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cmd2
 cp %{_builddir}/cmd2-2.3.2/LICENSE %{buildroot}/usr/share/package-licenses/cmd2/dd9e5c31bd71aedce57d00c1dd7a4a2737a97521
 cp %{_builddir}/cmd2-2.3.2/plugins/template/LICENSE %{buildroot}/usr/share/package-licenses/cmd2/3e6eb52ad8a3906e168e16d4a635f441ff29e02b
-python3 -m install --destdir=%{buildroot} dist/*.whl
+pip install --root=%{buildroot} --no-deps dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
